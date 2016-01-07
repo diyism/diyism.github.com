@@ -357,8 +357,8 @@ g;for(g in c){var e=g+(c[g]?"("+c[g]+")":"");!a(e)&&a(b.prefixSelector(e))&&b.se
     <li>原本的设计就是为web, 请求结束进程就reset</li>
     <li>lua调试不方便, tsf专门框架</li>
     <li>LuaRelayPHP, 既能利用lua的协程又可以把业务逻辑都写到php里</li>
-    <li></li>
-    <li></li>
+    <li>原理就是通过php的response header来控制lua进行对外请求, 一个客户端请求进来后nginx负责维持连接然后可以经过一系列多个php进程处理最终再返回给用户</li>
+    <li>一系列php进程间通过apc来保持数据, lua也通过一次php请求往apc存对外请求结果</li>
    </div>
 
    <div class="source">
