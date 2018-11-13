@@ -217,7 +217,7 @@
                 }
 
               }
-alert(newUrl.toLowerCase() +'===='+ url.toLowerCase());
+
               if (newUrl.toLowerCase() !== url.toLowerCase()) {
                 remarkise(newUrl);
               } else {
@@ -232,6 +232,7 @@ alert(newUrl.toLowerCase() +'===='+ url.toLowerCase());
 
             },
             success: function(data) {
+              alert(window.location.origin.toLowerCase() +'======'+ getOrigin(url).toLowerCase());
               if (window.location.origin.toLowerCase() !== getOrigin(url).toLowerCase()) {
                 MESSAGE.html('Error! (probably a violation of the ' +
                   '<a href="https://developer.mozilla.org/en-US/docs/Web/Security/Same-origin_policy">same-origin policy</a>)');
